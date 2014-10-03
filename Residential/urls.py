@@ -1,13 +1,13 @@
-from django.conf.urls import patterns, include, url
+import django.conf.urls
 from django.contrib import admin
 
-urlpatterns = patterns('',
+urlpatterns = django.conf.urls.patterns('',
                        # Examples:
-                       url(r'^$', 'Residential.views.home', name='home'),
-                       url(r'sobre', 'Residential.views.sobre', name='sobre'),
-                       url(r'cadastro', 'Residential.views.cadastro', name='cadastro'),
-                       url(r'contato', 'Residential.views.contato', name='contato'),
-                       url(r'portfolio', 'Residential.views.portfolio', name='portfolio'),
-                       url(r'servico', 'Residential.views.servicos', name='servico'),
-                       url(r'^admin/', include(admin.site.urls)),
-)
+                       django.conf.urls.url(r'$', 'Residential.views.home', name='home'),
+
+                       django.conf.urls.url(r'contato', 'Residential.views.contato', name='contato'),
+
+                       django.conf.urls.url(r'erro', 'Residential.views.erro', name='erro'),
+
+                       django.conf.urls.url(r'^admin/', django.conf.urls.include(admin.site.urls)),
+                                        )
